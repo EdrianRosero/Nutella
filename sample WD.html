@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <title>Nutella</title>
+    <link rel="icon" type="x-icon" href="https://raw.githubusercontent.com/EdrianRosero/Nutella/main/Page-Icon.png">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+        body {
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        #nav-bar .nav-barContainer {
+            width: 95%;
+            height: 60px;
+            display: flex;
+            justify-content: space-between;
+            border-radius: 40px;
+            margin: 15px 30px;
+            position: fixed;
+            z-index: 1;
+        }
+
+        .pageLogo {
+            margin: auto 40px;
+        }
+
+        .nav-barContainer {
+            padding: 5px 2px;
+            background-color: #df0202;
+        }
+
+        .navList a {
+            text-decoration: none;
+            color: #ffffff;
+
+        }
+
+        .navList ul {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .navList li {
+            display: flex;
+            margin: 0 15px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .navList li:hover {
+            transform: scale(1.2);
+        }
+
+        .navList {
+            margin: 0 30px;
+        }
+
+        #home img {
+            width: 100%;
+            display: block;
+        }
+
+        #about {
+            text-align: center;
+            padding-top: 50px;
+        }
+
+        .aboutSection {
+            background-color: #cd0505;
+            border-radius: 40px;
+            margin: 50px;
+            padding: 20px;
+            color: #ffffff;
+        }
+
+        .aboutSection h1 {
+            margin-top: 20px;
+            font-size: 60px;
+        }
+
+        .aboutSection p {
+            font-size: 20px;
+        }
+
+        .ingredientsMainContainer {
+            margin: 50px 0;
+            padding: 30px;
+            background-color: #eae3c9;
+
+        }
+
+        .ingredientsSubContainer {
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .sugar,
+        .palmOil,
+        .hazelNut,
+        .milk,
+        .cocoa,
+        .lecithin,
+        .vanillin {
+            background-color: #C4A484;
+            border-radius: 25px;
+            border: 1px solid #000000;
+            box-shadow: 2px 4px 5px #bbbbbb;
+            width: 250px;
+            height: 350px;
+            text-align: center;
+            margin: 20px 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+        }
+
+        .ingredientsTitle {
+            font-size: 60px;
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        #categoriesImage {
+            margin-top: 20px;
+            width: 225px;
+            height: 200px;
+            border-radius: 20px;
+        }
+
+        #categoryButton {
+            background-color: #ffffff;
+            padding: 5px 10px;
+            border-radius: 30px;
+            width: 50%;
+            height: fit-content;
+            cursor: pointer;
+            border: 1px solid #000000;
+        }
+
+        #categoryButton a {
+            text-decoration: none;
+            color: #000000;
+
+        }
+
+        #categoryButton:hover {
+            background-color: rgb(255, 39, 39);
+            transform: scale(1.2);
+
+        }
+
+        #categoryButton:hover a {
+            color: #ffffff;
+        }
+
+        .footerContainer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 50px;
+            background-color: hsl(0, 100%, 57%);
+            margin-top: 50px;
+            color: #ffffff;
+            font-size: 20px;
+        }
+
+        .socialsContainer img {
+            width: 50px;
+            height: auto;
+            margin: 20px 10px
+        }
+
+        @media screen and (max-width: 720px) {
+            .aboutSection h1 {
+                font-size: 40px;
+            }
+
+            .aboutSection p {
+                font-size: 16px;
+            }
+
+            .navList li {
+                font-size: 12px;
+                margin: 0 5px;
+            }
+
+            .ingredientsTitle {
+                font-size: 40px;
+                margin-bottom: 30px;
+            }
+
+            .sugar,
+            .palmOil,
+            .hazelNut,
+            .milk,
+            .cocoa,
+            .lecithin,
+            .vanillin {
+                width: 100%;
+                margin: 20px 0;
+            }
+
+            #categoriesImage {
+                width: 100%;
+                height: auto;
+                border-radius: 20px;
+            }
+
+            .categoryButton {
+                width: 100%;
+            }
+
+            .footerContainer {
+                padding: 20px;
+                font-size: 16px;
+            }
+
+            .socialsContainer img {
+                width: 40px;
+                height: auto;
+                margin: 10px 5px;
+            }
+        }
+
+        /* @media screen and (max-width:720px){
+                .aboutSection h1{
+                    font-size: 40px;
+                }
+
+                .aboutSection p{
+                    font-size: 16px;
+                }
+
+                .navList li{
+                    font-size: 12px;
+                    margin: 0 5px;
+                }
+            } */
+    </style>
+</head>
+
+<body>
+    <!-- NAV BAR -->
+    <nav id="nav-bar">
+        <div class="nav-barContainer">
+            <div class="pageLogo">
+                <img src="https://raw.githubusercontent.com/EdrianRosero/Nutella/main/Logo.png" alt="NutellaImg"
+                    width="100px" height="auto">
+            </div>
+            <div class="navList">
+                <ul>
+                    <li> <a href="#home"> Home </a> </li>
+                    <li> <a href="#about"> Behind the Jar </a> </li>
+                    <li> <a href="#ingredients"> What's in Nutella? </a> </li>
+                    <li> <a href="#contactCategories"> Connect with Us </a> </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- END OF NAV BAR -->
+
+    <!-- HOME SECTION -->
+    <section id="home">
+        <img src="https://raw.githubusercontent.com/EdrianRosero/Nutella/main/HomeBG.jpg" alt="HomeBGImage">
+    </section>
+    <!-- END OF HOME SECTION -->
+
+    <!-- ABOUT SECTION  -->
+    <section id="about">
+        <div class="aboutContainer">
+            <div class="aboutSection">
+                <h1 class="aboutTitle">Behind the Jar</h1>
+                <p>In the delectable world of Nutella, a velvety symphony of hazelnuts and cocoa entwines to create a
+                    spread that has captured hearts globally. Born in the picturesque Piedmont region of Italy, Nutella
+                    has evolved from a humble post-World War II invention to a cherished staple on breakfast tables
+                    worldwide. With its rich, creamy texture and irresistibly sweet flavor, Nutella has become a
+                    versatile companion, seamlessly integrating into a myriad of recipes and culinary creations. Beyond
+                    its heavenly taste, Nutella holds a special place in the hearts of those who savor it, embodying
+                    moments of joy and indulgence. Whether spread on warm toast, drizzled over pancakes, or enjoyed by
+                    the spoonful, Nutella continues to be a timeless celebration of simple pleasures and sweet memories.
+                </p>
+            </div>
+    </section>
+    <!-- END OF ABOUT SECTION  -->
+
+    <!-- INGREDIENTS SECTION -->
+    <section id="ingredients">
+        <div class="ingredientsMainContainer">
+            <h1 class="ingredientsTitle">What's in Nutella?</h1>
+            <div class="ingredientsSubContainer">
+                <div class="sugar">
+                    <img src="https://raw.githubusercontent.com/EdrianRosero/Nutella/main/Sugar-Image.jpg"
+                        alt="SugarImg" id="categoriesImage">
+                    <h2>Sugar</h2>
+                    <div id="categoryButton"><a
+                            href="https://www.nutella.com/ph/en/inside-nutella/quality-and-ingredients/sugar"
+                            target="_blank">Discover More</a></div>
+                </div>
+                <div class="palmOil">
+                    <img src="https://github.com/EdrianRosero/Nutella/blob/main/PalmOil-Image.jpeg?raw=true"
+                        alt="PalmOilImg" id="categoriesImage">
+                    <h2>Palm Oil</h2>
+                    <div id="categoryButton"><a
+                            href="https://www.nutella.com/ph/en/inside-nutella/quality-and-ingredients/palm-oil"
+                            target="_blank">Discover More</a></div>
+                </div>
+                <div class="hazelNut">
+                    <img src="https://raw.githubusercontent.com/EdrianRosero/Nutella/main/HazelNut-Image.jpg"
+                        alt="HazelNutImg" id="categoriesImage">
+                    <h2>Hazel Nut</h2>
+                    <div id="categoryButton"><a
+                            href="https://www.nutella.com/ph/en/inside-nutella/quality-and-ingredients/hazelnuts"
+                            target="_blank">Discover More</a></div>
+                </div>
+                <div class="milk">
+                    <img src="https://raw.githubusercontent.com/EdrianRosero/Nutella/main/Milk-Image.jpg" alt="MilkImg"
+                        id="categoriesImage">
+                    <h2>Milk</h2>
+                    <div id="categoryButton"><a
+                            href="https://www.nutella.com/ph/en/inside-nutella/quality-and-ingredients/milk"
+                            target="_blank">Discover More</a></div>
+                </div>
+                <div class="cocoa">
+                    <img src="https://raw.githubusercontent.com/EdrianRosero/Nutella/main/Cocoa-Image.jpg"
+                        alt="CocoaImg" id="categoriesImage">
+                    <h2>Cocoa</h2>
+                    <div id="categoryButton"><a
+                            href="https://www.nutella.com/ph/en/inside-nutella/quality-and-ingredients/cocoa"
+                            target="_blank">Discover More</a></div>
+                </div>
+                <div class="lecithin">
+                    <img src="https://raw.githubusercontent.com/EdrianRosero/Nutella/main/Lecithin-Image.jpg"
+                        alt="LecithinImg" id="categoriesImage">
+                    <h2>Lecithin</h2>
+                    <div id="categoryButton"><a
+                            href="https://www.nutella.com/ph/en/inside-nutella/quality-and-ingredients/lecithin"
+                            target="_blank">Discover More</a></div>
+                </div>
+                <div class="vanillin">
+                    <img src="https://raw.githubusercontent.com/EdrianRosero/Nutella/main/Vanillin-Image.jpg"
+                        alt="VanillinImg" id="categoriesImage">
+                    <h2>Vanillin</h2>
+                    <div id="categoryButton"><a
+                            href="https://www.nutella.com/ph/en/inside-nutella/quality-and-ingredients/vanillin"
+                            target="_blank">Discover More</a></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END OF INGREDIENTS SECTION -->
+
+    <!-- CONTACT SECTION -->
+    <footer id="contactCategories">
+        <div class="footerContainer">
+            <h1 class="contactTitle">Learn more about us</h1>
+            <div class="socialsContainer">
+                <a href="https://www.facebook.com/NutellaPhilippines" target="_blank"> <img
+                        src="https://raw.githubusercontent.com/EdrianRosero/Nutella/main/Facebook-Icon.png"
+                        alt="FacebookIcon"> </a>
+                <a href="https://www.instagram.com/nutellasea/" target="_blank"> <img
+                        src="https://raw.githubusercontent.com/EdrianRosero/Nutella/main/Instagram-Icon.png"
+                        alt="InstagramIcon"></a>
+                <a href="https://twitter.com/nutellaglobal" target="_blank"> <img
+                        src="https://raw.githubusercontent.com/EdrianRosero/Nutella/main/X-Icon.png" alt="XIcon"></a>
+                <a href="https://www.youtube.com/channel/UCWqN7xYxuUnHVy2xzQpAWUQ" target="_blank"> <img
+                        src="https://raw.githubusercontent.com/EdrianRosero/Nutella/main/Youtube-Icon.png"
+                        alt="YoutubeIcon"></a>
+            </div>
+        </div>
+    </footer>
+    <!-- END OF CONTACT SECTION -->
+</body>
+
+</html>
